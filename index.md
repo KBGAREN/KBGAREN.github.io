@@ -2,7 +2,7 @@
 layout: home
 title: BLOG of KBH
 subtitle: review
-cover-img: /assets/img/home_main.png
+cover-img: /assets/img/home_main.jpg
 ---
 
 <br/>
