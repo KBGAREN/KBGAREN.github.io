@@ -15,6 +15,7 @@ navbar-links:
   About me: "About me"
   #Publication: "publication"
   VHDL: "VHDL"
+  BLOG : "blog"
   Project: "project"
 
 
