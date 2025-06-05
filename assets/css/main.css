@@ -74,7 +74,7 @@ hr.small {
 }
 
 .main-content {
-  padding-top: 5rem;
+  margin-top: 400px;
 }
 @media (min-width: 768px) {
   .main-content {
