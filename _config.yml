@@ -12,12 +12,9 @@ author: Kim Byeong Heon
 # [조건부수정] 네비게이션 바에 포함되는 항목 (명칭 수정, 추가, 삭제 가능)
 # 예를 들어 ETRI 라는 항목을 네비게이션 바에 추가하고 싶은 경우, etri.md 파일 생성 후 ETRI: "etri" 라고 지정.
 navbar-links:
-  Portfolio: "/"
-  About me: "About me"
-  #Publication: "publication"
-  VHDL: "VHDL"
-  BLOG : "blog"
-  Project: "project"
+  Home: "/"
+  Portfolio: "/portfolio/"
+  TIL: "/til/"
 
 
 # [수정필요] 아바타 로고 사용 시에는 이미지 파일을 지정 (이미지 파일 업로드 후, 위치 지정)
@@ -169,6 +166,11 @@ highlighter: rouge
 permalink: /:year-:month-:day-:title/
 paginate: 5
 
+collections:
+  til:
+    output: true
+    permalink: /til/:name/
+
 kramdown:
   input: GFM
 
@@ -189,6 +191,14 @@ defaults:
     values:
       layout: "page"
       show-avatar: true
+  -
+    scope:
+      path: ""
+      type: "til"
+    values:
+      layout: "til-entry"
+      comments: false
+      social-share: false
 
 # Exclude these files from production site
 exclude:

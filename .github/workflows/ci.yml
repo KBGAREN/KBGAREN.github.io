@@ -14,13 +14,22 @@ jobs:
           -e PAGES_REPO_NWO=${{ github.repository }} \
           jekyll/builder:$JEKYLL_VERSION /bin/bash -c "chmod 777 /srv/jekyll && jekyll build --future"
 
-      - name: Test rendered portfolio and assets
+      - name: Test rendered pages, background, and assets
         run: |
           test -s _site/index.html
-          grep -Fq 'background-image: none;' _site/assets/css/portfolio.css
+          test -s _site/portfolio/index.html
+          test -s _site/til/index.html
+          grep -Fq 'home_main.jpg' _site/assets/css/site.css
+          grep -Fq 'linear-gradient' _site/assets/css/site.css
           for asset in profile.webp project1-demo.webp project2-architecture.webp project3-robot-arm.png project4-fft-benchmark.png project5-qpsk-model.png; do
             test -s "_site/assets/img/$asset"
           done
           for title in 'AI·V2X 기반 교차로 위험 판단 시스템 설계' 'TOPST 기반 AI·V2X 시스템 포팅' '얼굴 추적 로봇팔 기반 스마트폰 거치대' 'FFT 알고리즘 최적화' 'QPSK/16QAM 디지털 송수신 시스템 설계'; do
-            grep -Fq "$title" _site/index.html
+            grep -Fq "$title" _site/portfolio/index.html
           done
+          grep -Fq 'GitHub 로그인' _site/til/index.html
+          grep -Fq 'Today I Learned' _site/til/index.html
+          test -s _site/til/2026-10-02-review/index.html
+          test -s _site/assets/js/til-filter.js
+          grep -Fq 'delete/master/_til/' _site/til/index.html
+          test "$(grep -c 'class="til-card"' _site/til/index.html)" -eq 15

@@ -634,11 +634,6 @@
   }
 }
 
-/* Calm, high-contrast palette for the portfolio page. */
-body {
-  background: #f3f6f5;
-  background-image: none;
-}
 
 .portfolio-page {
   --portfolio-ink: #203139;

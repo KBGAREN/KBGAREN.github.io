@@ -1,0 +1,27 @@
+/* Keep the cyber-city background from the original page while softening the glare. */
+body {
+  color: #21353c;
+  background-color: #07152b;
+  background-image:
+    linear-gradient(rgba(4, 13, 31, 0.5), rgba(4, 13, 31, 0.5)),
+    url("/assets/img/home_main.jpg");
+  background-attachment: fixed;
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.intro-header:empty {
+  display: none;
+}
+
+.navbar-custom {
+  box-shadow: 0 2px 18px rgba(5, 21, 40, 0.16);
+}
+
+@media (max-width: 767px) {
+  body {
+    background-attachment: scroll;
+    background-position: center top;
+  }
+}

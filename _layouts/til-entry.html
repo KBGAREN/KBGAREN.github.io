@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<main class="til-entry-page">
+  <a class="til-back-link" href="/til/">← 모든 학습 기록</a>
+  <article class="til-entry-card">
+    <img class="til-entry-image" src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.category }}" loading="eager">
+    <header class="til-entry-heading">
+      <div class="til-card-meta"><span class="til-category">{{ page.emoji }} {{ page.category }}</span><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%Y년 %m월 %d일" }}</time></div>
+      <h1>{{ page.title }}</h1>
+      <p>{{ page.excerpt }}</p>
+    </header>
+    <div class="til-entry-content">{{ content }}</div>
+    <footer class="til-entry-footer">
+      {% if page.notion_url %}<a href="{{ page.notion_url }}" target="_blank" rel="noopener noreferrer">📓 Notion 원문 열기</a>{% endif %}
+      <a href="https://github.com/KBGAREN/KBGAREN.github.io/edit/master/{{ page.path }}" target="_blank" rel="noopener noreferrer">✏️ GitHub에서 수정</a>
+    </footer>
+  </article>
+  <nav class="til-entry-pagination" aria-label="TIL 페이지 이동"><a href="/portfolio/">🧰 포트폴리오</a><a href="/til/">📚 TIL 목록</a></nav>
+</main>
