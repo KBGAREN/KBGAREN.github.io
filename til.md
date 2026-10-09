@@ -7,7 +7,7 @@ meta-title: 김병헌 | TIL
 meta-description: Notion에 기록한 임베디드 Linux, RTOS, C++ 학습 노트.
 nav-short: true
 css:
-  - "/assets/css/til.css"
+  - "/assets/css/til.css?v=ad14250"
 ---
 
 <main class="til-page">
