@@ -13,3 +13,14 @@ jobs:
           -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
           -e PAGES_REPO_NWO=${{ github.repository }} \
           jekyll/builder:$JEKYLL_VERSION /bin/bash -c "chmod 777 /srv/jekyll && jekyll build --future"
+
+      - name: Test rendered portfolio and assets
+        run: |
+          test -s _site/index.html
+          grep -Fq 'background-image: none;' _site/assets/css/portfolio.css
+          for asset in profile.webp project1-demo.webp project2-architecture.webp project3-robot-arm.png project4-fft-benchmark.png project5-qpsk-model.png; do
+            test -s "_site/assets/img/$asset"
+          done
+          for title in 'AI·V2X 기반 교차로 위험 판단 시스템 설계' 'TOPST 기반 AI·V2X 시스템 포팅' '얼굴 추적 로봇팔 기반 스마트폰 거치대' 'FFT 알고리즘 최적화' 'QPSK/16QAM 디지털 송수신 시스템 설계'; do
+            grep -Fq "$title" _site/index.html
+          done
