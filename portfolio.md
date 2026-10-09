@@ -7,7 +7,7 @@ meta-title: 김병헌 | Embedded Software Portfolio
 meta-description: 김병헌의 펌웨어, RTOS, 임베디드 Linux 및 AI·V2X 프로젝트 포트폴리오.
 nav-short: true
 css:
-  - "/assets/css/portfolio.css?v=5c927f7"
+  - "/assets/css/portfolio.css?v=portfolio-dark"
 ---
 
 <div class="portfolio-page">
