@@ -4,14 +4,15 @@
 title: KBH
 
 # [수정필요] 간단한 사이트 설명
-description: KBH blog for VHDL
+description: Embedded Software Portfolio | Firmware, RTOS, Embedded Linux
 
 # [수정필요] 웹페이지 아래에 나오는 웹사이트 저자 이름
-author: KBH
+author: Kim Byeong Heon
 
 # [조건부수정] 네비게이션 바에 포함되는 항목 (명칭 수정, 추가, 삭제 가능)
 # 예를 들어 ETRI 라는 항목을 네비게이션 바에 추가하고 싶은 경우, etri.md 파일 생성 후 ETRI: "etri" 라고 지정.
 navbar-links:
+  Portfolio: "/"
   About me: "About me"
   #Publication: "publication"
   VHDL: "VHDL"
@@ -35,7 +36,7 @@ round-avatar: true
 # Uncomment the links you want to show and add your information to each one.
 # If you don't want to show a link to an RSS feed, set rss to "false".
 social-network-links:
-  email: "kbh6437@konkuk.ac.kr"
+  email: "doctorkbh@naver.com"
   github: KBGAREN
 #  twitter: daattali
 #  rss: true
